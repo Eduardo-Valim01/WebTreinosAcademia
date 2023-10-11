@@ -13,7 +13,7 @@ namespace WebTreinosAcademia.Models
         [StringLength(14)]
         public int cpf { get; set; }
         [Required]
-        [StringLength(50)]
+        [StringLength(60)]
         public string nome { get; set; }
         public int idade { get; set; }
         [Required]
