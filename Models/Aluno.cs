@@ -10,7 +10,7 @@ namespace WebTreinosAcademia.Models
         [Key]
         public int id { get; set; }
         [Required]
-        [StringLength(12)]
+        [StringLength(14)]
         public int cpf { get; set; }
         [Required]
         [StringLength(50)]
