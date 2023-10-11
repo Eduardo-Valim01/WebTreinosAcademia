@@ -7,14 +7,32 @@ namespace WebTreinosAcademia.Models
     public class Treino
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "ID")]
         public int id { get; set; }
-        [Required]
-        [StringLength(50)]
+
+        [Required(ErrorMessage = "Campo Nome do treino é obrigatório...")]
+        [StringLength(25)]
+        [Display(Name = "Nome do treino")]
         public string nometreino  { get; set; }
+
+        [Required(ErrorMessage = "Campo Descrição do treino é obrigatório...")]
+        [StringLength(25)]
+        [Display(Name = "Descrição do treino(Séries, e Repetiçoes")]
         public string descricaotreino { get; set; }
-        public string duracao { get; set; }
+
+        [Required(ErrorMessage = "Duração do Treino é Obrigatório...")]
+        [Display(Name = "Duração do Treino")]
+        public int duracao { get; set; }
+
+        [Required(ErrorMessage = "Campo Dificuldade é obrigatório...")]
+        [StringLength(15)]
+        [Display(Name = "Dificuldade do Treino")]
         public string dificuldade { get; set; }
-        public int professorResp { get; set; }
+
+        [Required(ErrorMessage = "Campo Professor é obrigatório...")]
+        [Display(Name = "Professor")]
+        public Professor professorResp { get; set; }
 
     }
 }
