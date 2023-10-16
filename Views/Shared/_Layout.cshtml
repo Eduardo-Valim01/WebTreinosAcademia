@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebTreinosAcademia.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body class = "bg-opacity-50 bg-opacity-10 text-black">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3" style="background-color: #120a8f;">
             <div class="container-fluid">
@@ -34,13 +34,14 @@
             </div>
         </nav>
     </header>
+</body>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="bg-success-subtle border-top footer text-muted">
         <div class="container">
             &copy; 2023 - WebTreinosAcademia - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
@@ -49,5 +50,5 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-</body>
+</bodyclas>
 </html>
