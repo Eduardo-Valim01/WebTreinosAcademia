@@ -16,7 +16,7 @@ namespace WebTreinosAcademia.Models
         [StringLength(14)]
         [Required(ErrorMessage = "Campo CPF é obrigatório...")]
         [Display(Name = "CPF")]
-        public int cpf { get; set; }
+        public string cpf { get; set; }
 
         [Required(ErrorMessage = "Campo Nome é obrigatório...")]
         [StringLength(50)]
@@ -33,9 +33,9 @@ namespace WebTreinosAcademia.Models
         [Required(ErrorMessage = "Campo Cidade é obrigatório...")]
         [StringLength(25)]
         [Display(Name = "Cidade")]
-        public int cidade { get; set; }
+        public string cidade { get; set; }
 
-        [Required(ErrorMessage = "Campo Dada Nascimento é obrigatório...")]
+        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
         [Display(Name = "Data Nascimento")]
         public DateTime datanasc { get; set; }
 

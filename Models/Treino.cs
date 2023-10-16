@@ -18,7 +18,7 @@ namespace WebTreinosAcademia.Models
 
         [Required(ErrorMessage = "Campo Descrição do treino é obrigatório...")]
         [StringLength(25)]
-        [Display(Name = "Descrição do treino(Séries, e Repetiçoes")]
+        [Display(Name = "(Séries, e Repetiçoes)")]
         public string descricaotreino { get; set; }
 
         [Required(ErrorMessage = "Duração do Treino é Obrigatório...")]
@@ -30,9 +30,11 @@ namespace WebTreinosAcademia.Models
         [Display(Name = "Dificuldade do Treino")]
         public string dificuldade { get; set; }
 
-        [Required(ErrorMessage = "Campo Professor é obrigatório...")]
+       
+        
         [Display(Name = "Professor")]
-        public Professor professorResp { get; set; }
-
+        public int professorResp { get; set; }
+        [ForeignKey("professorResp")]
+        public Professor professor { get; set; }
     }
 }

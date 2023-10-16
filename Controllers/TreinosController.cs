@@ -21,7 +21,8 @@ namespace WebTreinosAcademia.Controllers
         // GET: Treinos
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Treinos.ToListAsync());
+            var contexto = _context.Treinos.Include(prof => prof.professor);
+              return View(await contexto.ToListAsync());
         }
 
         // GET: Treinos/Details/5
@@ -45,6 +46,7 @@ namespace WebTreinosAcademia.Controllers
         // GET: Treinos/Create
         public IActionResult Create()
         {
+            ViewData["professorResp"] = new SelectList(_context.Professores, "id", "nome");
             return View();
         }
 

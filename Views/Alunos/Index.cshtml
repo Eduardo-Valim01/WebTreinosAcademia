@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Dados do Aluno</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Inserir Aluno</a>
 </p>
 <table class="table">
     <thead>
@@ -68,10 +68,9 @@
                 @Html.DisplayFor(modelItem => item.peso)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-            </td>
+                    <a asp-action="Edit" asp-route-id="@item.id"><input type="submit" value="Editar" class="btn btn-primary bg-warning text-dark border-0" /></a> |
+                    <a asp-action="Details" asp-route-id="@item.id"><input type="submit" value="Detalhar" class="btn btn-primary border-0" /></a> |
+                    <a asp-action="Delete" asp-route-id="@item.id"><input type="submit" value="Excluir" class="btn btn-primary bg-danger border-0" /></a>
         </tr>
 }
     </tbody>

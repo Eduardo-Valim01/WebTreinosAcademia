@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebTreinosAcademia.Models;
 
@@ -11,9 +12,11 @@ using WebTreinosAcademia.Models;
 namespace WebTreinosAcademia.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20231011105206_inicial_v2")]
+    partial class inicial_v2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -132,25 +135,25 @@ namespace WebTreinosAcademia.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
-                    b.Property<int>("professorResp")
+                    b.Property<int>("professorRespid")
                         .HasColumnType("int");
 
                     b.HasKey("id");
 
-                    b.HasIndex("professorResp");
+                    b.HasIndex("professorRespid");
 
                     b.ToTable("Treinos");
                 });
 
             modelBuilder.Entity("WebTreinosAcademia.Models.Treino", b =>
                 {
-                    b.HasOne("WebTreinosAcademia.Models.Professor", "professor")
+                    b.HasOne("WebTreinosAcademia.Models.Professor", "professorResp")
                         .WithMany()
-                        .HasForeignKey("professorResp")
+                        .HasForeignKey("professorRespid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("professor");
+                    b.Navigation("professorResp");
                 });
 #pragma warning restore 612, 618
         }
