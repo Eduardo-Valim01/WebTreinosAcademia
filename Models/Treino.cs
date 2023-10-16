@@ -32,9 +32,10 @@ namespace WebTreinosAcademia.Models
 
        
         
-        [Display(Name = "Professor")]
+        [Display(Name ="Professor")]
         public int professorResp { get; set; }
         [ForeignKey("professorResp")]
         public Professor professor { get; set; }
+
     }
 }
